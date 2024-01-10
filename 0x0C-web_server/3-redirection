@@ -1,8 +1,16 @@
 #!/usr/bin/env bash
-# Docs
+#  A Script that configures a new Ubuntu machine to Perform a 301-redirection
 
-sudo apt-get -y install nginx
-sudo bash -c 'echo "Hello World!" > /var/www/html/index.nginx-debian.html'
-redirect="\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
-sudo sed -i "53s|.*|$redirect|" /etc/nginx/sites-enabled/default
+# Upadating Packages before Installations
+sudo apt-get update
+sudo apt-get install -y nginx
+
+# Creating an index.html page
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# Performing a 301 Redirection
+string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/iinhle permanent;"
+sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
+
+# Restarting Nginx service
 sudo service nginx restart
