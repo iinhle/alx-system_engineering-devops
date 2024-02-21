@@ -41,7 +41,7 @@ frontend okuhleinc-frontend
         default_backend okuhleinc-backend
 
 frontend okuhleinc-frontend-https
-        bind *:443 ssl crt /etc/haproxy/certs/okuhleinc.tech.pem
+        bind *:443 ssl crt /etc/haproxy/certs/www.okuhleinc.tech.pem
         http-request set-header X-Forwarded-Proto https
         default_backend okuhleinc-backend
 
