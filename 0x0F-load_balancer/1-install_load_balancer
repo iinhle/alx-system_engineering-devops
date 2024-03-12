@@ -17,8 +17,8 @@ frontend  okuhleinc_frontend
         default_backend okuhleinc_backend
 backend okuhleinc_backend
         balance roundrobin
-        server 233377-web-01 54.85.133.44:80 check
-        server 233377-web-02 34.229.184.223:80 check
+        server 233377-web-01 35.175.129.176:80 check
+        server 233377-web-02 3.83.18.80:80 check
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
