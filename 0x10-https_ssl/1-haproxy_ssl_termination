@@ -47,5 +47,5 @@ frontend okuhleinc-frontend-https
 
 backend okuhleinc-backend
         balance roundrobin
-        server 233377-web-01 54.85.133.44:80 check
-        server 233377-web-02 34.229.184.223:80 check
+        server 233377-web-01 35.175.129.176:80 check
+        server 233377-web-02 3.83.18.80:80 check
