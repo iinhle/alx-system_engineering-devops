@@ -1,4 +1,4 @@
-# Check the status of ufw to make sure it is active by running:
+# Checking the status of ufw to make sure it is active by running:
 
 sudo ufw status
 
